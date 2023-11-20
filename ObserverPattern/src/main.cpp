@@ -59,8 +59,8 @@ int main(){
   WeatherStation _weatherStation;
   Phone phone1,phone2;
 
-  _weatherStation.add(&phone1);
-  _weatherStation.add(&phone2);
+  int p1index=_weatherStation.add(&phone1);
+  int p2index=_weatherStation.add(&phone2);
 
 
   _weatherStation.set_temp(25);
@@ -72,6 +72,13 @@ int main(){
   _weatherStation.notify();
   phone1.whatisthetemp();
   phone2.whatisthetemp();
+
+  _weatherStation.remove(p2index);
+  _weatherStation.set_temp(35);
+  _weatherStation.notify();
+  phone1.whatisthetemp();
+  phone2.whatisthetemp();
+
 
 
 
